@@ -8,7 +8,7 @@ shinyServer(function(input,output) {
     paste(input$example,"example",sep=".")
   })
   
-  output$svg.grid <- reactive(function(){
+  output$svg.grid <- reactiveText(function(){
     #from lattice package documentation
     Depth <- equal.count(quakes$depth, number=8, overlap=.1)
     xyplot.example <- xyplot(lat ~ long | Depth, data = quakes)
@@ -30,6 +30,6 @@ shinyServer(function(input,output) {
     on.exit(unlink(tempsvg))
     gridToSVG(name=tempsvg)
     svgoutput <- readLines(tempsvg, n=-1)
-    svgoutput
+    paste(svgoutput,sep="")
   })
 })

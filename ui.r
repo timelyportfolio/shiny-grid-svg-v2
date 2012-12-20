@@ -17,8 +17,8 @@ shinyUI(
       helpText(HTML("All source available on <a href = \"https://github.com/timelyportfolio/shiny-grid-svg\">Github</a>"))
       ),
     mainPanel(
-      includeHTML("svgfiller.js"),
-      reactiveSvg(outputId = "svg.grid")
+      #includeHTML("svgfiller.js"),
+      htmlOutput(outputId="svg.grid")
       )
     )
   )
