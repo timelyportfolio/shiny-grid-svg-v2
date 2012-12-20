@@ -4,7 +4,7 @@ require(gridSVG)
 
 shinyServer(function(input,output) {
   exampleInput <- reactive(function(){
-    print(input$example)  #for debugging
+    #print(input$example)  #for debugging
     paste(input$example,"example",sep=".")
   })
   
